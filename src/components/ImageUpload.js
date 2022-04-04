@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
-import { Stack } from "@mui/material";
+import { Stack, Button } from "@mui/material";
 import { storage, db, fb } from "../firebase.config";
+import "./ImageUpload.css";
 
 function ImageUpload({ username }) {
   const [image, setImage] = useState(null);
@@ -59,17 +60,28 @@ function ImageUpload({ username }) {
   };
 
   return (
-    <div>
-      <TextField
-        id="outlined-basic"
-        label="Caption"
-        variant="outlined"
-        value={caption}
-        onChange={(e) => setCaption(e.target.value)}
-        type="text"
-      />
-      <input type="file" onChange={handleChange} />
-      <button onClick={handleUpload}>Post</button>
+    <div className="imageUpload">
+      <h3 className="uploadTitle">Post an image</h3>
+      <input type="file" onChange={handleChange} className="imageInput" />
+      <Stack direction="row" spacing={2} className="postRow">
+        <TextField
+          id="outlined-basic"
+          label="Enter a caption"
+          variant="outlined"
+          value={caption}
+          onChange={(e) => setCaption(e.target.value)}
+          type="text"
+          className="captionField"
+          size="small"
+        />
+        <Button
+          variant="outlined"
+          className="postButton"
+          onClick={handleUpload}
+        >
+          Post
+        </Button>
+      </Stack>
       <progress value={progress} max="100" />
     </div>
   );

@@ -16,6 +16,7 @@
 .instagramLogo {
   padding: 18px;
   align-items: center;
+  object-fit: contain;
 }
 
 .alignVerticallyCenter {
