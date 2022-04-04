@@ -17,3 +17,8 @@
   padding: 18px;
   align-items: center;
 }
+
+.alignVerticallyCenter {
+  align-items: center;
+
+}
