@@ -1,0 +1,23 @@
+.post {
+  background-color: white;
+  max-width: 600px;
+  border: 1px solid lightgray;
+  margin: 10px;
+  margin-bottom: 45px;
+}
+
+.postHeader {
+  align-items: center;
+  padding: 18px;
+}
+
+.postImage {
+  width: 100%;
+  object-fit: contain;
+  border-top: solid 1px lightgray;
+  border-bottom: solid 1px lightgray;
+}
+
+.postCaption {
+  padding: 18px;
+}
