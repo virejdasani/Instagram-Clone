@@ -29,15 +29,17 @@ function App() {
 
       <AuthModal />
 
-      {posts.map((post, index) => (
-        <Post
-          key={index}
-          image={post.image}
-          username={post.username}
-          caption={post.caption}
-          avatar={post.avatar}
-        />
-      ))}
+      <div className="posts">
+        {posts.map((post, index) => (
+          <Post
+            key={index}
+            image={post.image}
+            username={post.username}
+            caption={post.caption}
+            avatar={post.avatar}
+          />
+        ))}
+      </div>
     </div>
   );
 }
