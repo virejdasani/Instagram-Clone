@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
+import { Stack } from "@mui/material";
 import "./App.css";
 import Post from "./components/Post";
 import { db } from "./firebase.config";
 import AuthModal from "./components/AuthModal";
-import { Stack } from "@mui/material";
+import ImageUpload from "./components/ImageUpload";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -22,8 +23,8 @@ function App() {
           src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
           alt="instagram"
         />
-        <AuthModal />
       </Stack>
+      <AuthModal />
 
       {posts.map((post, index) => (
         <Post

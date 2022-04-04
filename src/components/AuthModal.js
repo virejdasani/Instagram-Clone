@@ -4,8 +4,8 @@ import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import { Stack } from "@mui/material";
-
 import { auth } from "../firebase.config";
+import ImageUpload from "./ImageUpload";
 
 const style = {
   position: "absolute",
@@ -135,6 +135,7 @@ export default function AuthModal() {
                 label="Password"
                 variant="outlined"
                 value={password}
+                type="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <Button onClick={handleSignUp} type="submit" variant="text">
@@ -181,6 +182,11 @@ export default function AuthModal() {
           <div></div>
         </Box>
       </Modal>
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ) : (
+        <h4>Login to upload images</h4>
+      )}
     </div>
   );
 }
